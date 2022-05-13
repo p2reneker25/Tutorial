@@ -19,4 +19,7 @@ public final class Constants {
         public static final int DRIVE_PWM_RIGHT1 = 2;
         public static final int DRIVE_PWM_RIGHT2 = 3;
     }
+    public static class Controls{
+        public static final int CONTROLS_USB_JOYSTICK = 0;
+    }
 }
