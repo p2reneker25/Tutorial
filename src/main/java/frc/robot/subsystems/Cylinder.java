@@ -6,6 +6,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
@@ -14,6 +15,15 @@ public class Cylinder extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public Cylinder() {
     s_solenoid = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.Pneumatics.PNEUMATICS_PCM_CYLINDER_UP, Constants.Pneumatics.PNEUMATICS_PCM_CYLINDER_DN);
+  }
+  public void CylinderUp(){
+    s_solenoid.set(Value.kForward);
+  }
+  public void CylinderDown(){
+    s_solenoid.set(Value.kReverse);
+  }
+  public void DisableCylinder(){
+    s_solenoid.set(Value.kOff);
   }
 
   @Override
