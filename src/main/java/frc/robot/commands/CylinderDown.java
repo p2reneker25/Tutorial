@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 public class CylinderDown extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final Cylinder m_cylinder;
-  private Timer timer = new Timer();
+  private Timer timer;
 
   /**
    * Creates a new ExampleCommand.
@@ -22,13 +22,17 @@ public class CylinderDown extends CommandBase {
    */
   public CylinderDown(Cylinder c) {
     m_cylinder = c;
+    timer  = new Timer();
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(c);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    timer.reset();
+    timer.start();
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
@@ -43,6 +47,6 @@ public class CylinderDown extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return timer.get()>2;
   }
 }
