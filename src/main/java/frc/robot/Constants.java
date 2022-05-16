@@ -21,6 +21,8 @@ public final class Constants {
     }
     public static class Controls{
         public static final int CONTROLS_USB_JOYSTICK = 0;
+        public static final int CONTROLS_BUTTON_CYLINDER_UP = 3;
+        public static final int CONTROLS_BUTTON_CYLINDER_DN = 4;
     }
     public static class Pneumatics{
         public static final int PNEUMATICS_PCM_CYLINDER_UP = 0;
