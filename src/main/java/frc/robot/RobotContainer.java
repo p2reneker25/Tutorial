@@ -48,8 +48,8 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     m_drivetrain.setDefaultCommand(new Drive(m_drivetrain, j_joystick));
-    b_cylinder_dn.whileHeld(new CylinderDown(m_cylinder));
-    b_cylinder_up.whileHeld(new CylinderUp(m_cylinder));
+    b_cylinder_dn.whenPressed(new CylinderDown(m_cylinder));
+    b_cylinder_up.whenPressed(new CylinderUp(m_cylinder));
   }
 
   /**
