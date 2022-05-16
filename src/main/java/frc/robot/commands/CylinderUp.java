@@ -33,14 +33,16 @@ public class CylinderUp extends CommandBase {
   public void execute() {
     m_cylinder.CylinderUp();
   }
-
+  
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    m_cylinder.DisableCylinder();
+  }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return timer.get()>2;
   }
 }
